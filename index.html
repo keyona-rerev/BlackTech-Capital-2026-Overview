@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackTech Capital | Good for People, Good for Planet</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">BlackTech<span>Capital</span></a>
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="active">Overview</a></li>
+                    <li><a href="catalyst-fund.html">Catalyst Fund</a></li>
+                    <li><a href="fund-i.html">Fund I</a></li>
+                    <li><a href="catalyst-fund.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>BlackTech Capital: Good for People, Good for Planet</h1>
+            <p>Investing in underrepresented founders building ClimateTech solutions for a sustainable future.</p>
+            <div class="hero-btns">
+                <a href="catalyst-fund.html" class="btn btn-yellow">Explore Catalyst Fund</a>
+                <a href="fund-i.html" class="btn">Learn About Fund I</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fund Comparison Section -->
+    <section class="fund-comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2>Two Funds, One Mission</h2>
+                <p>Our journey from initial vision to current market adaptation</p>
+            </div>
+            
+            <div class="comparison-container">
+                <!-- Fund I Card -->
+                <div class="fund-card fund-i">
+                    <div class="fund-card-header">
+                        <h3>Fund I</h3>
+                        <p>Original Vision</p>
+                        <div class="fund-status" style="background-color: var(--neutral-tan);">On Pause</div>
+                    </div>
+                    <div class="fund-card-body">
+                        <div class="fund-feature">
+                            <h4>Target Size</h4>
+                            <p>$15M</p>
+                        </div>
+                        <div class="fund-feature">
+                            <h4>Investment Period</h4>
+                            <p>4 years</p>
+                        </div>
+                        <div class="fund-feature">
+                            <h4>Stage Focus</h4>
+                            <p>Pre-Seed to Seed</p>
+                        </div>
+                        <a href="fund-i.html" class="btn" style="width: 100%; margin-top: 20px;">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Catalyst Fund Card -->
+                <div class="fund-card catalyst">
+                    <div class="fund-card-header">
+                        <h3>Catalyst Fund</h3>
+                        <p>Current Offering</p>
+                        <div class="fund-status">Currently Fundraising & Deploying</div>
+                    </div>
+                    <div class="fund-card-body">
+                        <div class="fund-feature">
+                            <h4>Target Size</h4>
+                            <p>$500K - $2M</p>
+                        </div>
+                        <div class="fund-feature">
+                            <h4>Investment Period</h4>
+                            <p>1 year (through 2026)</p>
+                        </div>
+                        <div class="fund-feature">
+                            <h4>Stage Focus</h4>
+                            <p>Pre-Seed</p>
+                        </div>
+                        <a href="catalyst-fund.html" class="btn btn-yellow" style="width: 100%; margin-top: 20px;">Explore Fund</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Preview Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Leadership</h2>
+                <p>Meet the team driving our investment strategy</p>
+            </div>
+            
+            <div class="team-container">
+                <!-- Bryan Duarte -->
+                <div class="team-card">
+                    <div class="team-card-header">
+                        <h3>Bryan Duarte</h3>
+                        <p class="team-role">Managing Partner</p>
+                    </div>
+                    <div class="team-card-body">
+                        <p>Executive leader overseeing partnership strategy and organizational direction.</p>
+                    </div>
+                </div>
+                
+                <!-- Keyona Meeks -->
+                <div class="team-card">
+                    <div class="team-card-header">
+                        <h3>Keyona Meeks</h3>
+                        <p class="team-role">General Partner</p>
+                    </div>
+                    <div class="team-card-body">
+                        <p>Strategic leader responsible for partnership development and investment oversight.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="catalyst-fund.html#team" class="btn">View Full Team & Committees</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">BlackTech Capital</div>
+                <div class="footer-links">
+                    <a href="index.html" class="active">Overview</a>
+                    <a href="catalyst-fund.html">Catalyst Fund</a>
+                    <a href="fund-i.html">Fund I</a>
+                    <a href="catalyst-fund.html#contact">Contact</a>
+                </div>
+                <p class="copyright">© 2025 BlackTech Capital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            mobileToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileToggle.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
