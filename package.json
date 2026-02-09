@@ -1,0 +1,16 @@
+{
+  "name": "blacktech-capital",
+  "version": "1.0.0",
+  "description": "BlackTech Capital - Investing in underrepresented founders building ClimateTech solutions",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build required'"
+  },
+  "keywords": [
+    "climate-tech",
+    "venture-capital",
+    "impact-investing"
+  ],
+  "author": "BlackTech Capital",
+  "license": "MIT"
+}
