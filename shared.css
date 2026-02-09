@@ -631,16 +631,66 @@ footer {
     h1 {
         font-size: 1.8rem;
     }
-    
+
     h2 {
         font-size: 1.5rem;
     }
-    
+
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .container {
         padding: 0 15px;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    table th,
+    table td {
+        padding: 10px !important;
+    }
+}
+
+/* ===== TABLE ENHANCEMENTS ===== */
+table {
+    font-size: 0.95rem;
+}
+
+table th {
+    font-weight: 700;
+}
+
+table td strong {
+    color: var(--primary-blue);
+}
+
+/* ===== CONTENT BOX ENHANCEMENTS ===== */
+.content-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin: 20px 0;
+}
+
+.content-box.highlight {
+    border-left: 5px solid var(--accent-yellow);
+}
+
+.content-box.info {
+    border-left: 5px solid var(--primary-blue);
+}
+
+/* ===== IMPROVED RESPONSIVE GRID ===== */
+@media (max-width: 768px) {
+    .quick-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .fund-highlights {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
