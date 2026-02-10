@@ -1,0 +1,143 @@
+<!-- header.html -->
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">BlackTech<span>Capital</span></a>
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="catalyst-fund.html">Catalyst Fund</a></li>
+                <li><a href="fund-i.html">Fund I</a></li>
+                <li><a href="opportunities.html">Opportunities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<style>
+    /* Header styles from your existing CSS */
+    header {
+        background-color: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+    }
+    
+    .logo span {
+        color: #007bff;
+    }
+    
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .nav-links a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 5px 10px;
+        border-radius: 4px;
+        transition: all 0.3s;
+    }
+    
+    .nav-links a:hover {
+        color: #007bff;
+        background-color: #f5f5f5;
+    }
+    
+    .nav-links .active {
+        color: #007bff;
+        font-weight: bold;
+    }
+    
+    .mobile-toggle {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #333;
+    }
+    
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            gap: 15px;
+        }
+        
+        .nav-links.active {
+            display: flex;
+        }
+        
+        .mobile-toggle {
+            display: block;
+        }
+        
+        .nav-links a {
+            padding: 10px 15px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
+
+<script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                const icon = mobileToggle.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.className = 'fas fa-times';
+                } else {
+                    icon.className = 'fas fa-bars';
+                }
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    mobileToggle.querySelector('i').className = 'fas fa-bars';
+                });
+            });
+        }
+    });
+</script>

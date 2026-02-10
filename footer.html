@@ -1,0 +1,219 @@
+<!-- footer.html -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">BlackTech<span>Capital</span></div>
+            
+            <div class="footer-links">
+                <a href="index.html">Overview</a>
+                <a href="catalyst-fund.html">Catalyst Fund</a>
+                <a href="fund-i.html">Fund I</a>
+                <a href="opportunities.html">Opportunities</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <p><strong>Bryan Duarte</strong></p>
+                        <p><a href="mailto:bduarte@blacktechcapital.com">bduarte@blacktechcapital.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <p><strong>Keyona Meeks</strong></p>
+                        <p><a href="mailto:kmeeks@blacktechcapital.com">kmeeks@blacktechcapital.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div>
+                        <p><strong>Schedule a Meeting</strong></p>
+                        <p>
+                            <a href="https://calendly.com/bryanduarte/60-minute-meeting-with-bryan-btc" target="_blank" class="calendar-link">Bryan's Calendar</a> | 
+                            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ24g8BPHpaNhG1jyEiBwxS-_kpddOJZtJ_gI0gXj2Shc4V5fYW4niAHyt0Y7ds5jiIwvc4KrKL6" target="_blank" class="calendar-link">Keyona's Calendar</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-file-alt"></i>
+                    <div>
+                        <p><strong>Catalyst Fund Data Room</strong></p>
+                        <p>Available upon request</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="copyright">© <span id="current-year"></span> BlackTech Capital. All rights reserved.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-update year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</footer>
+
+<style>
+    /* Footer styles */
+    footer {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 50px 0 30px;
+        margin-top: 80px;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .footer-logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: white;
+    }
+    
+    .footer-logo span {
+        color: #007bff;
+    }
+    
+    .footer-links {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px 0;
+    }
+    
+    .footer-links a {
+        color: #ddd;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 5px 10px;
+        border-radius: 4px;
+        transition: all 0.3s;
+    }
+    
+    .footer-links a:hover {
+        color: white;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-links .active {
+        color: #fff;
+        font-weight: bold;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 500px;
+        width: 100%;
+        margin: 20px 0;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        text-align: left;
+    }
+    
+    .contact-item i {
+        color: #007bff;
+        font-size: 1.2rem;
+        margin-top: 3px;
+        min-width: 20px;
+    }
+    
+    .contact-item strong {
+        color: white;
+        display: block;
+        margin-bottom: 2px;
+    }
+    
+    .contact-item p {
+        margin: 0;
+        color: #bbb;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .contact-item a {
+        color: #4da3ff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .contact-item a:hover {
+        color: #80bfff;
+        text-decoration: underline;
+    }
+    
+    .calendar-link {
+        background-color: rgba(0, 123, 255, 0.1);
+        padding: 3px 8px;
+        border-radius: 4px;
+        margin: 0 2px;
+        font-size: 0.9rem;
+    }
+    
+    .calendar-link:hover {
+        background-color: rgba(0, 123, 255, 0.2);
+        text-decoration: none;
+    }
+    
+    .copyright {
+        color: #888;
+        font-size: 0.9rem;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .footer-links {
+            gap: 15px;
+        }
+        
+        .footer-links a {
+            padding: 8px 12px;
+        }
+        
+        .footer-contact {
+            padding: 15px;
+        }
+        
+        .contact-item {
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item i {
+            margin: 0;
+        }
+        
+        .calendar-link {
+            display: block;
+            margin: 5px 0;
+        }
+    }
+</style>
