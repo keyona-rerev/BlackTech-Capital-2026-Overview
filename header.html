@@ -18,7 +18,7 @@
 </header>
 
 <style>
-    /* Header styles from your existing CSS */
+    /* Header styles */
     header {
         background-color: white;
         box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -56,6 +56,8 @@
         list-style: none;
         gap: 30px;
         align-items: center;
+        margin: 0;
+        padding: 0;
     }
     
     .nav-links a {
@@ -82,6 +84,9 @@
         font-size: 1.5rem;
         cursor: pointer;
         color: #333;
+        background: none;
+        border: none;
+        padding: 5px;
     }
     
     @media (max-width: 768px) {
@@ -110,21 +115,40 @@
             padding: 10px 15px;
             width: 100%;
             text-align: center;
+            display: block;
+        }
+        
+        .nav-links li {
+            width: 100%;
         }
     }
 </style>
 
 <script>
-    // Mobile menu functionality
-    document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu functionality - this runs AFTER the header is loaded
+(function() {
+    // Function to initialize mobile menu
+    function initMobileMenu() {
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
         
-        if (mobileToggle) {
-            mobileToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                const icon = mobileToggle.querySelector('i');
-                if (navLinks.classList.contains('active')) {
+        if (mobileToggle && navLinks) {
+            // Remove any existing event listeners first
+            const newMobileToggle = mobileToggle.cloneNode(true);
+            mobileToggle.parentNode.replaceChild(newMobileToggle, mobileToggle);
+            
+            const newNavLinks = navLinks.cloneNode(true);
+            navLinks.parentNode.replaceChild(newNavLinks, navLinks);
+            
+            // Get fresh references after cloning
+            const freshMobileToggle = document.getElementById('mobileToggle');
+            const freshNavLinks = document.getElementById('navLinks');
+            
+            // Set up mobile toggle
+            freshMobileToggle.addEventListener('click', function() {
+                freshNavLinks.classList.toggle('active');
+                const icon = freshMobileToggle.querySelector('i');
+                if (freshNavLinks.classList.contains('active')) {
                     icon.className = 'fas fa-times';
                 } else {
                     icon.className = 'fas fa-bars';
@@ -132,12 +156,25 @@
             });
             
             // Close mobile menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
+            freshNavLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
-                    mobileToggle.querySelector('i').className = 'fas fa-bars';
+                    freshNavLinks.classList.remove('active');
+                    const icon = freshMobileToggle.querySelector('i');
+                    if (icon) {
+                        icon.className = 'fas fa-bars';
+                    }
                 });
             });
+            
+            console.log('Mobile menu initialized');
         }
-    });
+    }
+    
+    // Initialize when DOM is fully loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileMenu);
+    } else {
+        initMobileMenu();
+    }
+})();
 </script>
