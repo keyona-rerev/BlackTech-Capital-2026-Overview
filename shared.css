@@ -93,8 +93,8 @@ a:hover {
     transform: translateY(-2px);
 }
 
-.btn-yellow {
-    background-color: var(--accent-yellow);
+.btn-red {
+    background-color: var(--accent-red);
     color: var(--text-dark);
 }
 
